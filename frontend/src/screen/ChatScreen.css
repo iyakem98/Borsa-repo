@@ -1,0 +1,36 @@
+
+.chsc {
+    display: flex;
+    justify-content: space-between;
+    height: 700px;
+    color: black;
+    padding-right: 40px;
+}
+
+.chsclf{
+    width: 28%;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-left: 20px;
+    
+}
+
+.chsclf1{
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    padding-left: 10px;
+    border-radius: 30px;
+}
+
+.chscr {
+    width: 76%;
+    height: 670px;
+    border-radius: 20px;
+}
+
+.dfddf {
+    background-color: #ebe4fa;
+    background-color: #efe8ff;
+}

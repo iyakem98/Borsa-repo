@@ -1,0 +1,77 @@
+
+.currchat {
+}
+.currchat h2 {
+    text-align: center;
+    margin-top: 200px;
+}
+
+.CardTitHd{
+    display: flex;
+}
+
+.mychatscard {
+    border-width: 0ch;
+    border-bottom-width: 1px;
+    padding-top: 15px;
+}
+
+.mychatim {
+   border-radius: 50%;
+   height: 60px;
+}
+
+.messageform {
+    display: flex;
+    width: 99%;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    margin-top: 20px;
+    text-justify: center;
+}
+
+.messageformbutt {
+    height: 38px;
+    width: 100px;
+    border-radius: 20px;
+    border-width: 0ch;
+    background-color: #a991d4;
+}
+
+.messageformbutt:hover {
+    background-color: rgb(255, 255, 255);
+    color: #a991d4;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #a991d4;
+}
+
+.frmcontmessage {
+    border-radius: 20px;
+}
+
+.currchatbox {
+    height: 650px;
+    padding-left: 20px;
+    padding-right: 20px;
+   
+}
+
+.currchatmainbox {
+  
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.senderim {
+    border-radius: 50%;
+    height: 40px;
+    margin-right: 6px
+}
+
+
+

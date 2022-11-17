@@ -1,0 +1,45 @@
+.nav1 {
+    position: absolute;
+    position: fixed;
+    width: 100%;
+    z-index: 200;
+    box-shadow: 0 0 12px;
+    color: rgb(202, 202, 202);
+    font-size: larger;
+    height: 65px;
+    padding: 10px;
+    align-content: space-around;
+    
+}
+
+.navbrand {
+    font-size: 30px;
+}
+
+.nav1butt {
+    margin-left: 12px;
+    margin-right: 40px;
+
+}
+
+.nav1link {
+    
+    
+}
+
+.nav1linker {
+    margin-top: 3px;
+    margin-right: 30px;
+}
+
+.navcoll {
+    margin-left: -1000px;
+}
+
+
+
+.navdrop {
+    margin-right: 20px;
+    margin-top: 3px;
+}
+

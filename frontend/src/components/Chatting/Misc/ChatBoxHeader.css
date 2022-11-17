@@ -1,0 +1,7 @@
+
+.chbhd {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 15px;
+    background-color: rgb(240, 240, 240);
+}

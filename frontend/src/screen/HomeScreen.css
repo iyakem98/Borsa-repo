@@ -1,0 +1,66 @@
+.hmsc {
+    height: 1800px;
+    padding-top: 60px;
+    
+}
+
+.hmschd {
+    height: 600px;
+    position: relative;
+    padding: 130px;
+    box-shadow: 0 0 5px;
+    color: blueviolet;
+    background-color: yellowgreen;
+}
+
+.hmshd1 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.homeim1 {
+    width: 600px;
+    height: 500px;
+    margin-top: -80px;
+    border-radius: 50%;
+}
+
+.hmsdhright {
+    margin-left: 0px;
+}
+
+.hmsdhright h1{
+   font-size: 70px;
+   margin-bottom: 50px;
+}
+
+.homebutt1 {
+    margin-left: 20px;
+    width: 200px;
+    height: 50px;
+    border-radius: 40px;
+    background-color: black;
+}
+
+.homebutt1:hover{
+    background-color: #593196;
+}
+
+.hmsec {
+    height: 60px;
+    color: white;
+    padding-top: 15px;
+    /*background-color: darkcyan;*/
+}
+
+.hmsec p {
+    font-size: large;
+}
+
+.hmthird {
+    padding-top: 55px;
+}
+
+.hmthird h1 {
+    font-size: 60px;
+}
