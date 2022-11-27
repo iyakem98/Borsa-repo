@@ -51,13 +51,11 @@ const TravelerCard = ({product}) => {
    
     return (
       
-        <Card onClick={(onSubmit)} className='my-1 p-2 rounded myCard'>
-            <a href='#'/>
-            <h1>{selectedChat}</h1>
+        <Card onClick={(onSubmit)} className='my-3 p-1 rounded myCard'>
             <Card.Img src={product.profilePic} className='cardImg'/>
 
                 <Card.Body>
-                    <Card.Title as = 'div' className='CardN'> 
+                    <Card.Title as = 'div' className='text-dark'> 
                         <h3>{product.firstName} {product.lastName}</h3>
                     </Card.Title>
                     <Card.Text as = 'div' className='text-dark'>

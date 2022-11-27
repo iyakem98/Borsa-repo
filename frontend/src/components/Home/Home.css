@@ -2,6 +2,16 @@
 .homeIntro {
     height: 700px;
     text-align: center;
+    padding-top: 70px;
+}
+
+.homeIntro h3 {
+    font-size: 55px;
+    font-weight:100;
+    -webkit-text-stroke-color: rgb(255,255,255);
+    -webkit-text-stroke-width: 1px;
+    -webkit-font-smoothing: antialiased;
+
 }
 
 .tutorial {
