@@ -1,6 +1,8 @@
 import React from 'react'
 import './HomeScreen.css'
 import { Button, Image } from 'react-bootstrap'
+import HomeIntro from '../components/Home/HomeIntro'
+import Tutorial from '../components/Home/Tutorial'
 import { useState } from 'react'
 
 const HomeScreen = () => {
@@ -15,37 +17,40 @@ const HomeScreen = () => {
         }
   return (
     <div className='hmsc'>
-        <div className='hmschd  bg-secondary'>
+        <div className='hmschd'>
            <div className='hmshd1'>
             <div className='hmshdleft'>
-                <Image className='homeim1' src='https://9to5mac.com/wp-content/uploads/sites/6/2021/04/iPhone-12-purple-wallpaper.jpg?quality=82&strip=all'>
+               {/* <Image className='homeim1' src='https://9to5mac.com/wp-content/uploads/sites/6/2021/04/iPhone-12-purple-wallpaper.jpg?quality=82&strip=all'>
 
-                </Image>
+  </Image> */}
             </div>
             <div className='hmsdhright'>
-                <h1 className='text-dark'>Let's bring your stuff!</h1>
+                <p className='text-light'>Let's bring your stuff!</p>
 
                 {lang? (<Button className='homebutt1'>
                     እቃችሁን አምጡ
-                    </Button>):(<Button className='homebutt1' onClick={onLang} >
+                    </Button>):(<Button style={{background: 'none', color: 'black'}} className='homebutt1 bg-success' onClick={onLang} >
                         Bring your stuff
                     </Button>)}
                     
 
-                    <Button className='homebutt1'>
+                    <Button style={{background: 'none'}} className='homebutt1 bg-dark'>
                         Make money!
                     </Button>
 
             </div>
            </div>
         </div>
-        <div className='hmsec bg-primary'>
+       {/* <div className='hmsec'>
             <p>Get your first delivery free!</p>
-        </div>
+  </div> 
 
         <div className='hmthird'>
-            <h1 className='text-dark'>How does it work?</h1>
-        </div>
+            <p className='text-dark'>How does it work?</p>
+        </div> 
+*/}
+    <HomeIntro/>
+    <Tutorial/>
     </div>
   )
 }

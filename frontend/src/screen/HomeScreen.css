@@ -1,16 +1,19 @@
 .hmsc {
     height: 1800px;
     padding-top: 60px;
-    
+    text-align: center;
+    font-family: 'Trebuchet MS'
 }
 
 .hmschd {
-    height: 600px;
+    height: 700px;
     position: relative;
     padding: 130px;
-    box-shadow: 0 0 5px;
+    /*box-shadow: 0 0 5px; */
     color: blueviolet;
-    background-color: yellowgreen;
+    background-image: linear-gradient(#593196, #7b5bab);
+    font-family: 'Trebuchet MS';
+    border-width: 0ch;
 }
 
 .hmshd1 {
@@ -29,7 +32,7 @@
     margin-left: 0px;
 }
 
-.hmsdhright h1{
+.hmsdhright p{
    font-size: 70px;
    margin-bottom: 50px;
 }
@@ -39,7 +42,8 @@
     width: 200px;
     height: 50px;
     border-radius: 40px;
-    background-color: black;
+
+   
 }
 
 .homebutt1:hover{
@@ -50,6 +54,8 @@
     height: 60px;
     color: white;
     padding-top: 15px;
+    background-color: #593196;
+    border-width: 0ch;
     /*background-color: darkcyan;*/
 }
 
@@ -61,6 +67,12 @@
     padding-top: 55px;
 }
 
-.hmthird h1 {
+.hmthird p {
     font-size: 60px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 60px;
+    font-weight:100;
+    -webkit-text-stroke-color: rgb(255,255,255);
+    -webkit-text-stroke-width: 1px;
+    -webkit-font-smoothing: antialiased;
 }
