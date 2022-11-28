@@ -14,6 +14,7 @@ import AboutScreen from './screen/AboutScreen';
 import ToTry from './components/ToTry/ToTry'
 import ChatScreen from './screen/ChatScreen';
 import ContactScreen from './screen/ContactScreen';
+import Footer from './components/Footer/Footer';
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 
 
@@ -36,6 +37,7 @@ function App() {
          <Route path = "/chat" element = {<ChatScreen/>}/>
          <Route path = "/contact" element = {<ContactScreen/>}/>
        </Routes>
+       <Footer/>
      </Router>
      <ToastContainer/>
     </div>

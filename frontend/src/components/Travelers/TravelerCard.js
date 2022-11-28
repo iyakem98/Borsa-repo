@@ -51,7 +51,7 @@ const TravelerCard = ({product}) => {
    
     return (
       
-        <Card onClick={(onSubmit)} className='my-3 p-1 rounded myCard'>
+        <Card onClick={(onSubmit)} className='my-3 p-1 myCard'>
             <Card.Img src={product.profilePic} className='cardImg'/>
 
                 <Card.Body>

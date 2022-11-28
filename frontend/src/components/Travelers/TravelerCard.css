@@ -4,10 +4,13 @@
     box-shadow: 0 0 12px;
     color: #E8E8E8;
     width: 300px;
+    border-radius: 20px;
 }
 
 .cardImg {
     height: 200px;
     width: auto;
     object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }

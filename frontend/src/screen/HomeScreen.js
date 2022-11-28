@@ -25,7 +25,7 @@ const HomeScreen = () => {
   </Image> */}
             </div>
             <div className='hmsdhright'>
-                <p className='text-light'>Let's bring your stuff!</p>
+                <h3 className='text-light'>Let's bring your stuff!</h3>
 
                 {lang? (<Button className='homebutt1'>
                     እቃችሁን አምጡ
