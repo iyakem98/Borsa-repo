@@ -8,6 +8,7 @@ import { toast } from 'react-toastify'
 import { logout, reset } from '../../features/auth/authSlice'
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {Link, useNavigate} from 'react-router-dom'
+import Logo1 from '../../data/logo1.png'
 import './Nav1.css'
 
 function Nav1() {
@@ -27,7 +28,10 @@ function Nav1() {
   return (
     <Navbar className='nav1' bg="white" expand="lg">
       <Container fluid>
-        <Link to = '/' style={{  textDecoration: 'none' }} className='text-primary navbrand'>B</Link>
+     
+        <Link to = '/' style={{  textDecoration: 'none' }} className='text-primary navbrand'>
+        <img className ='navLogo' src = {Logo1}/>
+        </Link>
       
         <Navbar.Toggle aria-controls="navbarScroll" />
         
