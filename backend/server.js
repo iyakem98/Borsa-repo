@@ -39,52 +39,35 @@ const serv = app.listen(PORT, console.log(`Server running in ${process.env.NODE_
 
 const httpServer = createServer();
 
-const io = new Server(serv, { cors: { origin: 'http://localhost:3000' } });
-
-/*const io = new socketio (httpServer, {
-    pingTimeout: 60000,
-    cors: {
-        origin: "http://localhost:3000/",
-    },
-}) */
+const io = new Server(serv,
+     { 
+        pingTimeout: 6000,
+        cors: { origin: 'http://localhost:3000' } 
+    });
 
 io.on("connection", (socket) => {
     console.log('connected to socket.io')
 
-    socket.on('setup', (userData)=> {
-
+    socket.on("setup", (userData) => {
         socket.join(userData._id)
-        console.log(`setting up in ${userData._id}`)
-        socket.emit('connected')
+        console.log(userData._id)
+        socket.emit("connected")
+    });
 
-    })
-
-    socket.on('join_room', (room)=> {
-
+    socket.on("join chat", (room) => {
         socket.join(room)
-        console.log(`Your room is up in ${room}`)
-       
+        console.log(`user joined room ${room}`)
+    });
 
-    })
+    socket.on("new message", (newMessageReceived) => {
+        var chat = newMessageReceived.chat;
 
-    socket.on('new_message', (newMessageReceived)=> {
+        if(!chat.users) return console.log("chat.users is not defined")
 
-        var chat = newMessageReceived.chat
-
-        if (!chat.users) {
-            return console.log("chat.users not defined")
-        }
-
-
-       chat.users.forEach(user => {
-        if(user._id == newMessageReceived.sender._id){
-            return 
-        } 
-
-        socket.in(user._id).emit("message received", newMessageReceived )
-       })
-
-    })
-
-   
+        chat.users.forEach(user => {
+            if (user._id == newMessageReceived.sender._id) return 
+            
+            socket.in(user._id).emit("message received", newMessageReceived)
+        })
+    });
 })

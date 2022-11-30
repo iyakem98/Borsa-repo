@@ -29,7 +29,7 @@ const HomeScreen = () => {
 
                 {lang? (<Button className='homebutt1'>
                     እቃችሁን አምጡ
-                    </Button>):(<Button style={{background: 'none', color: 'black'}} className='homebutt1 bg-success' onClick={onLang} >
+                    </Button>):(<Button style={{background: 'none', color: 'bwhite'}} className='homebutt1 bg-success' onClick={onLang} >
                         Bring your stuff
                     </Button>)}
                     

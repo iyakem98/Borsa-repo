@@ -22,12 +22,18 @@
     background-color: white;
     padding-left: 10px;
     border-radius: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 12px;
+    color: #E8E8E8;
+    
 }
 
 .chscr {
-    width: 76%;
+    width: 74%;
     height: 670px;
     border-radius: 20px;
+    box-shadow: 0 0 12px;
+    color: #E8E8E8;
 }
 
 .dfddf {

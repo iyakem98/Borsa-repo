@@ -62,7 +62,7 @@ const MyChats = () => {
                     {chattts.map((chat)=> (
                        /* <SingleChat chat = {chat} /> */
                        <Card className='mychatscard' onClick={()=> setSelectedChat(chat)}>
-                            <Card.Title as = 'div' className='CardTit'>
+                            <Card.Title as = 'div' className='CardTit text-dark'>
                               <div className='CardTitHd'>
                                 <Image className='mychatim' src = {getSenderFull(user, chat.users).profilePic}/>
                                 <h5>{getSender(user, chat.users)}</h5>

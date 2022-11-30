@@ -12,6 +12,7 @@ import ConsumerScreen from './screen/ConsumerScreen';
 import ProfileScreen from './screen/ProfileScreen';
 import AboutScreen from './screen/AboutScreen';
 import ToTry from './components/ToTry/ToTry'
+import './index.css'
 import ChatScreen from './screen/ChatScreen';
 import ContactScreen from './screen/ContactScreen';
 import Footer from './components/Footer/Footer';
@@ -21,7 +22,7 @@ import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
      <Router>
        <Nav1/>
        <Routes>
