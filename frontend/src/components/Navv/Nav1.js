@@ -8,7 +8,7 @@ import { toast } from 'react-toastify'
 import { logout, reset } from '../../features/auth/authSlice'
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {Link, useNavigate} from 'react-router-dom'
-import Logo1 from '../../data/logo1.png'
+import Logo1 from '../../data/Logos/logo1.png'
 import './Nav1.css'
 
 function Nav1() {

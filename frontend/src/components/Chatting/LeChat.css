@@ -37,18 +37,16 @@
     width: 100px;
     border-radius: 20px;
     border-width: 0ch;
-    background-color: #a991d4;
+    background-color: #13b955;
 }
 
 .messageformbutt:hover {
-    background-color: rgb(255, 255, 255);
-    color: #a991d4;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #a991d4;
+    background-color: #13b955;
+    font-weight: bold;
+    
 }
 
-.frmcontmessage {
+ .frmcontmessage {
     border-radius: 20px;
 }
 

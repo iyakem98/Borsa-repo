@@ -1,5 +1,5 @@
 import './bootstrap.min.css'
-import ColorSchemesExample from './components/Navv/Navv';
+//import ColorSchemesExample from './components/Navv/Navv';
 import Nav1 from './components/Navv/Nav1';
 import HomeScreen from './screen/HomeScreen';
 import LoginScreen from './screen/LoginScreen';
