@@ -1,3 +1,5 @@
+/*This is the HomeScreen that users see first. It includes, among other things, description of services that the company offers and mini-tutorials
+ on how to use the app */
 import React from 'react'
 import './HomeScreen.css'
 import { Button, Image } from 'react-bootstrap'

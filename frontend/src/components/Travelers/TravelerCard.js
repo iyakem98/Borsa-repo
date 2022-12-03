@@ -1,4 +1,4 @@
-
+/* This is a card styling each traveler's card in the list of travelers. It includes traveler info such as profile pic, name, and travel date/location */
 import React from 'react'
 import { Card, Carousel } from 'react-bootstrap'
 import './TravelerCard.css'
@@ -34,7 +34,7 @@ const TravelerCard = ({product}) => {
   const [userId, setUserId] = useState(product._id)
 
  
-
+//this function connects to the backend via redux using dispatch and starts a chat with the selected individual (card)
   const onSubmit = (e) => {
     e.preventDefault()
     console.log(product._id)

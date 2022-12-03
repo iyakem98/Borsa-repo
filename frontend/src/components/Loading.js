@@ -1,3 +1,6 @@
+/* This is a loading components, it is basically a spinner that comes on the screen 
+when a page is loading. It can be applied to any page that loads components from the backend
+especially using redux. */
 
 import React from 'react';
 import { Spinner } from 'react-bootstrap';

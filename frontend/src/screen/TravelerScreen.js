@@ -1,8 +1,10 @@
+//this component renderes a list of travelers/buyers for users to view
+
 import React from 'react'
 import {Row, Col} from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { Container, Navbar } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import TravelerCard from '../components/Travelers/TravelerCard'
 import { getTravelers, reset} from '../features/auth/authSlice'
 import { useNavigate } from 'react-router-dom'

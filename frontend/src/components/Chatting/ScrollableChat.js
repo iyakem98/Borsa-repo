@@ -1,3 +1,6 @@
+/* This pages utilizes a react property called ScrollableFeed and helper functions from ChatLogics.js
+to style the messages displayed in the chatbox */
+
 import React from 'react'
 import ScrollableFeed from 'react-scrollable-feed'
 import { useSelector } from 'react-redux'

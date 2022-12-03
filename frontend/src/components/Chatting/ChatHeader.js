@@ -1,3 +1,5 @@
+/* This code deals with the header of the chat where the user info of the selected chat is displayed. 
+Details of the function below are covered in the ChatLogics.js document*/
 import React from 'react'
 import { useState, useEffect } from 'react'
 import {Form, Button, Row, Col, Image} from 'react-bootstrap'
@@ -12,7 +14,7 @@ import './ChatHeader.css'
 
 
 const ChatHeader = () => {
-    const { user } = useSelector((state) => state.auth)
+    const { user } = useSelector((state) => state.auth) //this gets the info of the logged in user from the redux state
     const {selectedChat} = ChatState()
   return (
     <div className='chd bg-light'>

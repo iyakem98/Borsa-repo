@@ -1,3 +1,6 @@
+/* This code deals with the currently opened chat and all messages within it.
+*/
+
 import React from 'react'
 import { ChatState } from '../../context/chatProvider'
 import animationData from '../../data/Animations/typing-indicator1.json'
@@ -36,6 +39,7 @@ const CurrentChat = () => {
     const [typing, setTyping] = useState(false)
     const [isTyping, setIsTyping] = useState(false)
   
+    //this is a property of the typing icon. No need to worry about this  
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -44,9 +48,10 @@ const CurrentChat = () => {
           preserveAspectRatio: "xMidYMid slice",
         },
       };
+      
    
-
-    useEffect(() =>  {
+    // This useEffect function basically ensures that socket is connected as soon as the page is loaded 
+     useEffect(() =>  {
         socket = io(ENDPOINT);
         socket.emit("setup", user)
         socket.on("connected", () => setSocketConnected(true))
@@ -55,7 +60,7 @@ const CurrentChat = () => {
       
     }, [])
    
-    
+    // this function connects to the backend and fetches every message users in this chat have sent each other
     const fetchMessages = async () =>  {
         if (!selectedChat){
             return
@@ -92,7 +97,10 @@ const CurrentChat = () => {
         }
     }
 
-
+    /*this useEffect function calls the function to fetch all messages in the chat. 
+    The "selectedChat" in the brackets below ensures that fetchmessages() is called 
+    whenever the slectedChat is changed so users can see the messages every chat they select.
+    */
     useEffect(() =>  {
         fetchMessages() 
         console.log("hello people of the world")
@@ -100,7 +108,14 @@ const CurrentChat = () => {
         selectedChatCompare = selectedChat
       
     }, [selectedChat])
-    
+
+
+    /* 
+    This deals with the user receiving a message. Using socketio makes the retrieval of message 
+    instantaneous. Below, if the user has not opened the chat in which message was sent, they 
+    get a notification that they have a new message. Else (if they have opened the specific chat)
+    they get the message realtime. 
+    */
     useEffect(()=> {
         socket.on('message received', (newMessageReceived) => {
             if(!selectedChatCompare || selectedChatCompare._id !== newMessageReceived.chat._id) {
@@ -113,6 +128,8 @@ const CurrentChat = () => {
         })
     })
 
+
+    //the function below is redundant 
     const onSubmit = (e) => {
         e.preventDefault()
         console.log('submitt')
@@ -122,7 +139,12 @@ const CurrentChat = () => {
     
    
     
-
+    /* This function deals with sending a message. It connects to the backend to send the
+    chat in which the message is being sent (chatId) and the message itself (content). In the
+    end, the new message is pushed into an array of all messages (using setMessages). There is
+    a socket calling to stop typing as soon as the message is sent so that the typing notification
+    dissapears
+     */
     const sendMess = async(event) => {
         event.preventDefault()
         console.log(newMessage)
@@ -157,6 +179,9 @@ const CurrentChat = () => {
         }
     }
 
+    /* this handles the typing notification when the other user is typing in the chat.
+    It utilizes timeouts to make sure that the tpying notification dissapears a few seconds
+    after the user stops typing */
     const typingHandler = (e) => {
        setNewMessage(e.target.value)
         
@@ -183,7 +208,7 @@ const CurrentChat = () => {
   return (
     <div className='currchat'>
        {selectedChat? (
-
+        //the code below renders the messages in a specific chat when it is selected including a typing box at the bottom
         <div className='currchatbox'>
 
             <div className='currchatmainbox'>
@@ -230,6 +255,7 @@ const CurrentChat = () => {
 
       
        ):(
+        //if a chat is not selected (!selectedChat), the box just displays the following text
         <h2 className='text-dark'>Click on a chat</h2>
         
        )}
