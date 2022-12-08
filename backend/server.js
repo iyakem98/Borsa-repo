@@ -20,6 +20,8 @@ dotenv.config()
 
 connectDB()
 
+//console.log("Connected to DB");
+
 const app = express()
 
 

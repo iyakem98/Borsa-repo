@@ -38,7 +38,7 @@ const authUser = asyncHandler(async(req, res) => {
 //@access public
 const registerUser = asyncHandler(async(req, res) => {
     const {firstName, lastName, email, password, userName, isTraveler, profilePic, city, country} = await req.body
-
+    //console.log("Got here!")
     const userExists = await User.findOne({email})
 
     const userNameTaken = await User.findOne({userName})
