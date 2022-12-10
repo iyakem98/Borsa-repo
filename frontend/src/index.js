@@ -7,15 +7,17 @@ import { Provider } from 'react-redux';
 import {store} from './store'
 import reportWebVitals from './reportWebVitals';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ChatProvider>
      <Provider store={store}>
-        <App />
+      <App />
      </Provider>
   </ChatProvider>
  
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
