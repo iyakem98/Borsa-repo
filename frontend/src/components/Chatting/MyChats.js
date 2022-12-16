@@ -68,7 +68,6 @@ const MyChats = () => {
                               <div className='CardTitHd'>
                                 <Image className='mychatim' src = {getSenderFull(user, chat.users).profilePic}/>
                                 <h5>{getSender(user, chat.users)}</h5>
-
                                 </div> 
                             
                             </Card.Title>

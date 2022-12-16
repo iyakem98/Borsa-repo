@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { ChatState } from '../../context/chatProvider'
 import { useSelector, useDispatch } from 'react-redux'
 import { toast } from 'react-toastify'
 import { logout, reset } from '../../features/auth/authSlice'
@@ -10,13 +11,14 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import {Link, useNavigate} from 'react-router-dom'
 import Logo1 from '../../data/Logos/logo1.png'
 import './Nav1.css'
+import { getSender, getSenderFull } from '../Chatting/ChatConfig/ChatLogics';
 
 function Nav1() {
   
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { user } = useSelector((state) => state.auth)
-
+  const {notification, setNotification } = ChatState();
   const onLogout = () => {
     dispatch(logout())
     dispatch(reset())
@@ -70,7 +72,28 @@ function Nav1() {
                 {user?(
 
                   <Link to = '/chat' style={{  textDecoration: 'none' }} className='text-dark nav1linker'  disabled>
-                  Messages
+                  Messages 
+                
+                  <p>
+                    {notification.length}
+                  </p>
+
+                  {/* <NavDropdown className='text-primary text-bold navdrop' title= 'Messages' id = 'username'>
+
+                    {!notification.length? (
+                         <NavDropdown.Item className='drnav'>No new messages</NavDropdown.Item>
+                    ): (
+
+                     <div>
+                      {notification.map((notif) => (
+                         <NavDropdown.Item key = {notif._id} className='drnav' as={Link}> New Message from {getSenderFull(user, notif.chat.users).firstName} </NavDropdown.Item>
+                      ))}
+                     </div>
+
+                    )}
+                        
+                        
+                      </NavDropdown>  }*/}
                   </Link>
                 )
               

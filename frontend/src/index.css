@@ -14,9 +14,12 @@ code {
 
 */
 
-
+::-webkit-scrollbar {
+  width: 0;
+}
 .app {
   min-height: 80vh;
+
 }
 
 body {

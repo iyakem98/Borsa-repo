@@ -22,14 +22,14 @@ import io from 'socket.io-client'
 const ENDPOINT = "http://localhost:5002";
 var socket, selectedChatCompare 
 
-const CurrentChat = () => {
+const CurrentChat = ({fetchAgain, setFetchAgain}) => {
 
 
 
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const { selectedChat, setSelectedChat, chats, setChats } = ChatState();
+    const { selectedChat, setSelectedChat, chats, setChats, notification, setNotification } = ChatState();
     const {isLoading, isError} = useSelector((state) => state.mess)
     const { user } = useSelector((state) => state.auth)
     const [socketConnected, setSocketConnected] = useState(false)
@@ -40,7 +40,7 @@ const CurrentChat = () => {
     const [isTyping, setIsTyping] = useState(false)
   
     //this is a property of the typing icon. No need to worry about this  
-    const defaultOptions = {
+    const defaultOptions = {  
         loop: true,
         autoplay: true,
         animationData: animationData,
@@ -48,7 +48,7 @@ const CurrentChat = () => {
           preserveAspectRatio: "xMidYMid slice",
         },
       };
-      
+
    
     // This useEffect function basically ensures that socket is connected as soon as the page is loaded 
      useEffect(() =>  {
@@ -103,11 +103,13 @@ const CurrentChat = () => {
     */
     useEffect(() =>  {
         fetchMessages() 
-        console.log("hello people of the world")
+        //console.log("hello people of the world")
 
         selectedChatCompare = selectedChat
       
     }, [selectedChat])
+
+    console.log(notification, 'nwotinwoti')
 
 
     /* 
@@ -118,9 +120,15 @@ const CurrentChat = () => {
     */
     useEffect(()=> {
         socket.on('message received', (newMessageReceived) => {
-            if(!selectedChatCompare || selectedChatCompare._id !== newMessageReceived.chat._id) {
-                //give notification
-            }
+            if (
+                !selectedChatCompare || // if chat is not selected or doesn't match current chat
+                selectedChatCompare._id !== newMessageReceived.chat._id
+              ) {
+                if (!notification.includes(newMessageReceived)) {
+                  setNotification([...notification, newMessageReceived]);
+                  setFetchAgain(!fetchAgain);
+                }
+              }
 
             else {
                 setMessages([...messages, newMessageReceived])
@@ -132,7 +140,7 @@ const CurrentChat = () => {
     //the function below is redundant 
     const onSubmit = (e) => {
         e.preventDefault()
-        console.log('submitt')
+        //console.log('submitt')
     }
 
     
@@ -147,8 +155,8 @@ const CurrentChat = () => {
      */
     const sendMess = async(event) => {
         event.preventDefault()
-        console.log(newMessage)
-        console.log(selectedChat._id)
+        //console.log(newMessage)
+        //console.log(selectedChat._id)
         if (newMessage) {
             socket.emit('stop typing', selectedChat._id)
             try {
