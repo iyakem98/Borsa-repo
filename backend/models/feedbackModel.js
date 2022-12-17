@@ -11,10 +11,10 @@ const feedbackSchema = mongoose.Schema ({
         type: Number
     },
 
-    comments: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: Comment
-    }]
+    // comments: [{
+    //     type: String,
+    //     ref: Comment
+    // }]
 })
 
 const Feedback = mongoose.model('Feedback', feedbackSchema)

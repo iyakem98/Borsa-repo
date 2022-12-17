@@ -6,12 +6,10 @@ import userRoutes from './routes/userRoutes.js'
 import chatRoutes from './routes/chatRoutes.js'
 import messageRoutes from './routes/messageRoutes.js'
 import orderRoutes from './routes/orderRoutes.js'
+import feedbackRoutes from './routes/feedbackRoutes.js'
 import cors from 'cors';
 import { createServer } from 'http';
 import { Server } from 'socket.io'; //replaces (import socketIo from 'socket.io')
-
-
-
 
 
 dotenv.config()
@@ -33,6 +31,7 @@ app.use('/api/users', userRoutes)
 app.use('/api/chat', chatRoutes)
 app.use('/api/message', messageRoutes)
 app.use('/api/orders', orderRoutes)
+app.use('/api/feedback', feedbackRoutes)
 
 const PORT = process.env.PORT || 5002
 const serv = app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold))

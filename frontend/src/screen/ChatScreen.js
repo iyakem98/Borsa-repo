@@ -30,8 +30,8 @@ const ChatScreen = () => {
       }, [user, dispatch]) */
   return (
     <div className = 'cs bg-light'>
-      {/* <FeedbackModal/> */}
-        {/* <ChatHeader/>
+      {/*<FeedbackModal/> */}
+      <ChatHeader/>
        <div className='chsc'>
         <div className='chsclf bg-light'>
           <div className = 'chsclf1'>
@@ -46,7 +46,7 @@ const ChatScreen = () => {
             <ChatBox/>
         </div>
 
-    </div> */}
+    </div>
     </div>
    
   )

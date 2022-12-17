@@ -6,42 +6,37 @@ import asyncHandler from 'express-async-handler'
 
 
 
-// /api/users/feedback/
+// /api/feedback/send
 
 const sendFeedback = asyncHandler(async(req, res) => {
-    const {user_email, traveler_email, rating, comment} = await req.body
+    const {user_id, traveler_id, rating, comment} = await req.body;
+  
+    //const user = await User.findOne({user_id})
 
-    const user = await User.findOne({user_email})
+    //const traveler = await User.findOne({traveler_email})
 
-    const traveler = await User.findOne({traveler_email})
-
+    console.log(user_id);
+    console.log(traveler_id);
    
-    if (!user) {
+    if (!user_id) {
         res.status(400)
         throw new Error ('Rating provided by non-existent user')
     }
 
-    if (!traveler) {
-        res.status(400)
-        throw new Error ('Rating non-existent traveler')
-    }
+    // if (!traveler) {
+    //     res.status(400)
+    //     throw new Error ('Rating non-existent traveler')
+    // }
 
-    if (userNameTaken) {
-        res.status(400)
-        throw new Error ('Username Taken! put in another one')
-    }
+    const feedback = await Comment.create(
+        {
+            user_id,
+            rating,
+            comment
 
-    // const user = await User.create({
-    //     firstName,
-    //     lastName,
-    //     email,
-    //     password,
-    //     userName,
-    //     isTraveler,
-    //     profilePic,
-    //     city,
-    //     country,
-    // })
+        }
+    )
+
 
     if (feedback) {
         res.status(201).json ({
@@ -55,3 +50,5 @@ const sendFeedback = asyncHandler(async(req, res) => {
         throw new Error ('Invalid data for feedback')
     }
 })
+
+export {sendFeedback}

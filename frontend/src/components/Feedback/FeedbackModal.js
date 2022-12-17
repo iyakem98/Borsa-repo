@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import { TextField } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
+import { collectFeedback } from '../../features/feedback/feedbackSlice'
 
 const style = {
     position: 'absolute',
@@ -37,18 +38,6 @@ const divstyle = {
 // }, [user, isError, isSuccess, message, navigate, dispatch])
 
 
-// const onSubmit = (e) => {
-//   e.preventDefault()
-
-//   const feedbackData = {
-//     user_email,
-      //  traveler_email, 
-      //  rating, 
-      //  comment
-//   }
-
-//   dispatch(collectFeedback(feedbackData))
-// }
 
 
 const FeedbackModal = (props) => {
@@ -57,13 +46,34 @@ const FeedbackModal = (props) => {
       (state) => state.feed
     )
 
+    console.log(user);
     const dispatch = useDispatch()
 
+    const [user_id, setUserId] = React.useState('');
     const [modalVisibility, setModalVisibility] = React.useState(false);
     const [rating, setRating] = React.useState(init_rating);
     const [comment, setComment] = React.useState(init_comment);
     const handleOpen = () => setModalVisibility(true);
     const handleClose = () => setModalVisibility(false);
+
+
+    const onSubmit = (e) => {
+      e.preventDefault()
+
+      handleClose();
+
+      const user_id = user.user_id;
+    
+      const feedbackData = {
+        user_id,
+        user_id, 
+        rating, 
+        comment
+      }
+      
+      dispatch(collectFeedback(feedbackData))
+    
+    }
     
   return (
     <div style={divstyle}>
@@ -80,7 +90,7 @@ const FeedbackModal = (props) => {
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 How would you rate {props.traveler} ?
                 </Typography>
-                <Rating name="simple-controlled" value={rating} 
+                <Rating name="simple-controlled" value={rating}  
                 onChange={(event, newValue) => {
                   setRating(newValue);
                 }}
@@ -95,7 +105,7 @@ const FeedbackModal = (props) => {
                     setComment(newValue);
                   }}
                 />
-                <Button >Send</Button>
+                <Button  type ='submit'  onClick = {onSubmit}>Send</Button>
             </Box>
     </Modal>
     </div>
