@@ -72,8 +72,6 @@ const RegisterScreen = () => {
                 city,
                 country,
                 isTraveler,
-
-
               }
           
               dispatch(register(userData))
@@ -216,7 +214,7 @@ const RegisterScreen = () => {
                             onChange={handleCheck}
                         />
                     </Form.Group>
-                    <Link to = '/Login' style={{ }} className='text-primary'>Already have an account?</Link>
+                    <Link to = '/login' style={{ }} className='text-primary'>Already have an account?</Link>
                     <Button type ='submit' variant = 'primary' className='btn btn-block btn-primary loginbutt'>
                         Sign up
                     </Button>
