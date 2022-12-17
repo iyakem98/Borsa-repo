@@ -47,9 +47,9 @@ const TravelerScreen = () => {
         {isLoading?(<Loading/>): isError? (<h2>error</h2>): (
             <Container>
             <Row>
-                {travelers.map((product) =>  (
+                {travelers.map((traveler) =>  (
                     <Col sm={12} md={6} lg={4} xl={3}>
-                        <TravelerCard product = {product}/>
+                        <TravelerCard traveler = {traveler}/>
                     </Col>
                 ))}
             </Row>
