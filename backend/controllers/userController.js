@@ -214,7 +214,8 @@ const getUserById = asyncHandler(async (req, res) => {
     const user = await User.findById(req.params.id)
   
     if (user) {
-      user.name = req.body.name || user.name
+      user.firstName = req.body.firstName || user.firstName
+      user.lastName = req.body.lastName || user.lastName
       user.email = req.body.email || user.email
       user.isAdmin = req.body.isAdmin
   
@@ -222,8 +223,13 @@ const getUserById = asyncHandler(async (req, res) => {
   
       res.json({
         _id: updatedUser._id,
-        name: updatedUser.name,
+        firstName: updatedUser.firstName,
+        lastName: updatedUser.lastName,
+        userName: updatedUser.userName,
         email: updatedUser.email,
+        city: updatedUser.city,
+        country: updatedUser.country,
+        isTraveler: updatedUser.isTraveler,
         isAdmin: updatedUser.isAdmin,
       })
     } else {
