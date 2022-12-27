@@ -9,14 +9,14 @@ import asyncHandler from 'express-async-handler'
 // /api/feedback/send
 
 const sendFeedback = asyncHandler(async(req, res) => {
-    const {user_id, traveler_id, rating, comment} = await req.body;
+    const {user, traveler, rating, comment} = await req.body;
   
+    const user_id = user._id;
+
+    console.log(comment);
     //const user = await User.findOne({user_id})
 
     //const traveler = await User.findOne({traveler_email})
-
-    console.log(user_id);
-    console.log(traveler_id);
    
     if (!user_id) {
         res.status(400)

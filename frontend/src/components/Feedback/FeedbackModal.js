@@ -6,7 +6,9 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import { TextField } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
-import { collectFeedback } from '../../features/feedback/feedbackSlice'
+import { collectFeedback } from '../../features/feedback/feedbackSlice';
+import { getSender, getSenderFull } from '../Chatting/ChatConfig/ChatLogics';
+import { ChatState } from '../../context/chatProvider'
 
 const style = {
     position: 'absolute',
@@ -42,35 +44,34 @@ const divstyle = {
 
 const FeedbackModal = (props) => {
 
-    const { user, traveler, init_rating, init_comment, isError, isSuccess, isLoading, message } = useSelector(
+    const { user } = useSelector((state) => state.auth) // GOOD
+    const { selectedChat, setSelectedChat, chats, setChats } = ChatState(); //NOT GOOD FOR NOW, FIX
+    const { user_id, traveler_id, init_rating, init_comment, isError_r, isSuccess_r, isLoading_r, message_r } = useSelector(
       (state) => state.feed
-    )
-
-    console.log(user);
-    const dispatch = useDispatch()
-
-    const [user_id, setUserId] = React.useState('');
+    );
+    const dispatch = useDispatch();
     const [modalVisibility, setModalVisibility] = React.useState(false);
     const [rating, setRating] = React.useState(init_rating);
     const [comment, setComment] = React.useState(init_comment);
     const handleOpen = () => setModalVisibility(true);
     const handleClose = () => setModalVisibility(false);
 
-
     const onSubmit = (e) => {
       e.preventDefault()
-
       handleClose();
 
-      const user_id = user.user_id;
+      //const user_id = user.user_id;
+
     
       const feedbackData = {
-        user_id,
-        user_id, 
-        rating, 
+        user,
+        user, 
+        rating,
         comment
-      }
+
+      };
       
+      //const feedbackData = user;
       dispatch(collectFeedback(feedbackData))
     
     }
