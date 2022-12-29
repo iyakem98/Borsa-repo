@@ -1,21 +1,26 @@
 import mongoose from 'mongoose'
 
-const feedbackSchema = mongoose.Schema ({
+const feedbackSchema = mongoose.Schema (
+    {
+        user: { //THIS SHOULD BE CHANGED TO TRAVELER
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+            unique: true
+        }, 
 
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-    }, 
+        score: {
+            type: Number
+        },
+        comments: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Comment"
+        }]
 
-    score: {
-        type: Number
     },
-
-    // comments: [{
-    //     type: String,
-    //     ref: Comment
-    // }]
-})
+    {
+        timestamps: true
+    }
+)
 
 const Feedback = mongoose.model('Feedback', feedbackSchema)
 

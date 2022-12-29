@@ -61,7 +61,6 @@ const FeedbackModal = (props) => {
       handleClose();
 
       //const user_id = user.user_id;
-
     
       const feedbackData = {
         user,

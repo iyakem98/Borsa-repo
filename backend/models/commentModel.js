@@ -1,20 +1,25 @@
 import mongoose from 'mongoose'
 
-const commentSchema = mongoose.Schema ({
+const commentSchema = mongoose.Schema (
+    {
+        user: { //THIS SHOULD BE CHANGED TO CONSUMER
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+            unique: true
+        }, 
 
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
+        score: {
+            type: Number
+        }, 
+
+        comment: {
+            type: String
+        }
     }, 
-
-    score: {
-        type: Number
-    }, 
-
-    comment: {
-        type: String
+    {
+        timestamps: true
     }
-})
+);
 
 const Comment = mongoose.model('Comment', commentSchema);
 
