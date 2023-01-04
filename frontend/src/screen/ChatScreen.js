@@ -11,8 +11,7 @@ import Message from '../components/Message'
 import MyChats from '../components/Chatting/MyChats'
 import ChatBox from '../components/Chatting/ChatBox'
 import ChatHeader from '../components/Chatting/ChatHeader'
-
-
+import FeedbackModal from '../components/Feedback/FeedbackModal'
 
 const ChatScreen = () => {
     const { user } = useSelector((state) => state.auth)
@@ -33,7 +32,8 @@ const ChatScreen = () => {
       }, [user, dispatch]) */
   return (
     <div className = 'cs bg-light'>
-        <ChatHeader/>
+      {/*<FeedbackModal/> */}
+      <ChatHeader/>
        <div className='chsc'>
         <div className='chsclf bg-light'>
           <div className = 'chsclf1'>

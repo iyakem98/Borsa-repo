@@ -17,6 +17,7 @@ import ChatScreen from './screen/ChatScreen';
 import ContactScreen from './screen/ContactScreen';
 import Footer from './components/Footer/Footer';
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import FeedbackModal from './components/Feedback/FeedbackModal';
 
 
 
@@ -36,6 +37,7 @@ function App() {
          <Route path = "/about" element = {<AboutScreen/>}/>
          <Route path = "/t" element = {<ToTry/>}/>
          <Route path = "/chat" element = {<ChatScreen/>}/>
+         <Route path = "/feedback" element = {<FeedbackModal traveler = "Tim Greg"/>} />
          <Route path = "/contact" element = {<ContactScreen/>}/>
        </Routes>
        <Footer/>

@@ -22,11 +22,8 @@ import io from 'socket.io-client'
 const ENDPOINT = "http://localhost:5002";
 var socket, selectedChatCompare 
 
+
 const CurrentChat = ({fetchAgain, setFetchAgain}) => {
-
-
-
-
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { selectedChat, setSelectedChat, chats, setChats, notification, setNotification } = ChatState();

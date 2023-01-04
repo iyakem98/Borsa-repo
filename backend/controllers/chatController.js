@@ -64,6 +64,7 @@ const accessChat = asyncHandler(async(req, res) => {
   const { userId } = await req.body;
   console.log('access phase 1')
 
+  
 if (!userId) {
   console.log("UserId param not sent with request");
   return res.sendStatus(400);
