@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 
+
 const feedbackSchema = mongoose.Schema (
     {
         user: { //THIS SHOULD BE CHANGED TO TRAVELER
@@ -21,6 +22,7 @@ const feedbackSchema = mongoose.Schema (
         timestamps: true
     }
 )
+
 
 const Feedback = mongoose.model('Feedback', feedbackSchema)
 

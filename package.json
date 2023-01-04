@@ -10,6 +10,7 @@
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
     "data:import": "node backend/seeder",
+    "data:import-random": "node backend/seeder -l",
     "data:destroy": "node backend/seeder -d"
   },
   "author": "Iyakem Estifanos",
@@ -29,6 +30,7 @@
     "socket.io": "^4.5.3"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "concurrently": "^7.4.0",
     "nodemon": "^2.0.20"
   }

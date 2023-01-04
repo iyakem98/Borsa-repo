@@ -159,9 +159,9 @@ const users = [
         city: "Kano",
         country: "Nigeria"
 
+
         
-        
-    },
+    }
 
 ]
 

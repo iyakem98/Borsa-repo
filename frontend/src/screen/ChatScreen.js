@@ -17,6 +17,8 @@ const ChatScreen = () => {
     const { user } = useSelector((state) => state.auth)
     const navigate = useNavigate()
     const dispatch = useDispatch()
+
+    const [fetchAgain, setFetchAgain] = useState(false)
     /*useEffect(() => {
        
         if (!user) {
@@ -35,7 +37,7 @@ const ChatScreen = () => {
        <div className='chsc'>
         <div className='chsclf bg-light'>
           <div className = 'chsclf1'>
-              <MyChats/>
+              <MyChats fetchAgain={fetchAgain}/>
           </div>
      
          
@@ -43,7 +45,7 @@ const ChatScreen = () => {
 
         <div className='chscr bg-white'>
 
-            <ChatBox/>
+            <ChatBox fetchAgain={fetchAgain} setFetchAgain={setFetchAgain}/>
         </div>
 
     </div>

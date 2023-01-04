@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 
+
 const commentSchema = mongoose.Schema (
     {
         user: { //THIS SHOULD BE CHANGED TO CONSUMER

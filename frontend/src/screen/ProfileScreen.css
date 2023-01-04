@@ -1,4 +1,8 @@
 
-.prsc {
-    padding-top: 70px;
+.profileScreen {
+    height: 1000px;
+    padding-top: 120px;
+    display: flex;
+    /*justify-content: space-around; */
 }
+
